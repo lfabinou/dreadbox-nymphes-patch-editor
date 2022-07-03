@@ -1,0 +1,259 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 40px;
+    /* 220 64 36 */
+    /* 308 40 71 */
+    background-color:hsl(210,40%,50%);
+}
+
+a,a:hover,a:visited,a:active{
+    color: hsl(308,40%,71%);
+}
+
+h1{
+    margin-top: 0px;
+    font-size: 40px;
+    margin-bottom: 10px; 
+}
+
+.version{
+    font-size: 15px;
+}
+
+h2{
+    margin: 0px 0px 9px 0px;
+    font-size: 19px;
+}
+
+h3{
+    margin: 0px 0px 0px 0px;
+    font-size: 12px;
+}
+
+h3.bottom{
+    color:hsl(220,64%,36%);
+    background-color:hsl(308,40%,71%);
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    padding: 0px 3px;
+    font-size: 13px;
+}
+
+.main{
+    width:1640px;
+    margin: auto;
+    background-color:hsl(220,64%,36%);
+    color:hsl(308,40%,71%);
+    padding: 30px;
+    border-radius: 16px;
+    display: flow-root;
+}
+
+.sliderbox{
+    float:left;
+    text-align: center;
+    width: 30px;
+    margin-right: 5px;
+}
+
+.sliderbox.rfs h3{
+    border-bottom: 2px solid hsl(308,40%,71%);
+    margin-bottom: 0px;
+    line-height: 13px;    
+}
+
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
+}
+
+.section{
+    border-top: 5px solid;
+    border-left: 5px solid;
+    border-color:hsl(308,40%,71%);
+    padding: 10px 10px;
+    width: auto;
+    border-radius: 10px 0px 0px 0px; 
+}
+
+.ports{
+    float: none;
+    height: 50px;
+    margin: 10px 5px 10px 0px;
+}
+
+.osc{
+    width: 375px;
+    float: left;
+    margin: 10px 25px 10px 0px;
+}
+
+.filt{
+    width: 235px;
+    float: left;
+    margin: 10px 25px 10px 0px;
+}
+
+.filteg{
+    width: 180px;
+    float: left;
+    margin: 10px 25px 10px 0px;
+}
+
+.ampeg{
+    width: 189px;
+    float: left;
+    margin: 10px 25px 10px 0px;
+}
+
+.lfoa{
+    width: 235px;
+    float: left;
+    margin: 10px 25px 10px 0px;
+}
+
+.lfob{
+    width: 235px;
+    float: left;
+    margin: 10px 5px 10px 0px;
+}
+
+.lfooscmod,.modwoscmod{
+    width: 375px;
+    float: left;
+    margin: 10px 25px 10px 0px;
+}
+
+.lfofiltmod,.modwfiltmod{
+    width: 235px;
+    float: left;
+    margin: 10px 25px 10px 0px;
+}
+
+.filtegmod,.modwfiltegmod{
+    width: 180px;
+    float: left;
+    margin: 10px 25px 10px 0px;
+}
+
+.ampegmod,.modwampegmod{
+    width: 189px;
+    float: left;
+    margin: 10px 25px 10px 0px;
+}
+
+.lfoamod{
+    width: 225px;
+    float: left;
+    margin: 10px 5px 10px 0px;
+}
+
+.general,.reverb{
+    width: 165px;
+    float: left;
+    margin: 10px 25px 10px 0px;
+}
+
+input[type=range][orient=vertical].foldin{
+    height: 0px;
+    overflow: hidden;
+}
+
+.buttons{
+    float:none;
+}
+
+.anostyle{
+    color: hsl(308,40%,71%);
+}
+
+.foldlink{
+    font-size: 13px;
+    margin-left: 12px;
+}
+
+#midi-data{
+    border:1px solid hsl(308,40%,71%);
+    background-color:white;
+    color:black;
+    overflow-y: scroll;
+    width:100%;
+    height: 160px;
+}
+
+.filename{
+    border: 3px solid hsl(308,40%,71%);
+    float: left;
+    margin-right: 15px;
+    line-height: 14px;
+    border-radius: 5px;
+}
+
+.filename.error{
+    border-color: tomato;
+}
+
+.fileinput{
+    font-size: 18px;
+    background-color: hsl(220,47%,45%);
+    border: none;
+    color:hsl(308,40%,71%);
+    padding: 2px 10px;
+}
+
+.fileinput:focus-visible {
+    outline: none;
+}
+
+.filebutton{
+    float: left;
+    font-size: 25px;
+    margin-right: 100px;
+}
+
+.filebutton a{
+    text-decoration: none;
+}
+
+.filebutton a i{
+    margin-right:0px;
+}
+
+.filebox{
+    height: 0px;
+    overflow: hidden;
+}
+
+.selectorbox{
+    float:left;
+    width: 25%;
+    font-size: 25px;    
+}
+
+.port_name{
+    padding: 0px 10px;
+}
+
+select{
+    font-size: 20px;
+    color: hsl(220,64%,36%);
+    background-color: hsl(308,40%,71%);
+    border-radius: 5px;
+    padding: 4px 5px;
+}
+
+.floatclear{
+    clear: left;
+    /* height:287px; */
+}
