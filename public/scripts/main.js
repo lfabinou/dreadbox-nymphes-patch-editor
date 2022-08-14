@@ -279,8 +279,14 @@ function initDevices(midi) {
 }
 
 function displayDevices() {
-    selectIn.innerHTML  = midiIn.map( device => `<option>${device.name}</option>`).join('');
-    selectOut.innerHTML = midiOut.map(device => `<option>${device.name}</option>`).join('');
+    selectIn.innerHTML  = midiIn.map( device => {
+        nymphes_available = (device.name == 'Nymphes' ? ' selected="selected"' : '')
+        return `<option${nymphes_available}>${device.name}</option>`
+    }).join('');
+    selectOut.innerHTML = midiOut.map(device => {
+        nymphes_available = (device.name == 'Nymphes' ? ' selected="selected"' : '')
+        return `<option${nymphes_available}>${device.name}</option>`
+    }).join('');
 }
   
 function startListening() {     
@@ -317,3 +323,68 @@ function sendSlider(valA,valB,valC){
     const msg = [valA,valB,valC];
     device.send(msg); 
 }
+
+function noteOn(note) { // later on, add [note, velocity, duration=0] to attributes
+    const device = midiOut[selectOut.selectedIndex];
+    device.send([0x90, note, 0x7f]); // send full velocity note-ON A4 on channel 0. note A4 = 69
+}
+
+function noteOff(note) { // later on, add [note, velocity, duration=0] to attributes
+    const device = midiOut[selectOut.selectedIndex];
+    device.send([0x80, note, 0]); // send full velocity note-OFF A4 on channel 0
+}
+
+Array.from(document.getElementsByClassName('keyboard-key')).forEach(key => {
+    key.addEventListener('mousedown', function() {
+        noteOn(this.getAttribute('data_note_number'));
+    })  
+    key.addEventListener('mouseup', function() {
+        noteOff(this.getAttribute('data_note_number'));
+    })
+});
+
+document.addEventListener('keypress', event => {
+    keys_notes = {
+        "a": 60,
+        "w": 61,
+        "s": 62,
+        "e": 63,
+        "d": 64,
+        "f": 65,
+        "t": 66,
+        "g": 67,
+        "y": 68,
+        "h": 69,
+        "u": 70,
+        "j": 71
+    }
+    keys_to_capture = Object.keys(keys_notes);
+    pressed_key = event.key;
+    if (keys_to_capture.includes(pressed_key)) {
+        // console.log(event.key + " is a target key");
+        noteOn(keys_notes[pressed_key]);
+    }
+});
+
+document.addEventListener('keyup', event => {
+    keys_notes = {
+        "a": 60,
+        "w": 61,
+        "s": 62,
+        "e": 63,
+        "d": 64,
+        "f": 65,
+        "t": 66,
+        "g": 67,
+        "y": 68,
+        "h": 69,
+        "u": 70,
+        "j": 71
+    }
+    keys_to_capture = Object.keys(keys_notes);
+    pressed_key = event.key;
+    if (keys_to_capture.includes(pressed_key)) {
+        // console.log(event.key + " is a target key");
+        noteOff(keys_notes[pressed_key]);
+    }
+});
