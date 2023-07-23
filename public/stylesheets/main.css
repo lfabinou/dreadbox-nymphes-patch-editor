@@ -114,29 +114,29 @@ input[type=range][orient=vertical]
 }
 
 .filteg{
-    width: 180px;
+    width: 170px;
     float: left;
     margin: 10px 25px 10px 0px;
 }
 
 .ampeg{
-    width: 189px;
+    width: 170px;
     float: left;
     margin: 10px 25px 10px 0px;
 }
 
-.lfoa{
+.lfo {
     width: 235px;
     float: left;
     margin: 10px 25px 10px 0px;
 }
 
-.lfob{
+/*.lfob{
     width: 235px;
     float: left;
     margin: 10px 5px 10px 0px;
 }
-
+*/
 .lfooscmod,.modwoscmod{
     width: 375px;
     float: left;
@@ -167,8 +167,8 @@ input[type=range][orient=vertical]
     margin: 10px 5px 10px 0px;
 }
 
-.general,.reverb{
-    width: 165px;
+.general {
+    width: 240px;
     float: left;
     margin: 10px 25px 10px 0px;
 }

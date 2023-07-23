@@ -47,16 +47,16 @@
     
     <div class="section osc">
       <h2>Oscillator</h2>
-      <div class="sliderbox rfs"><h3>WAV</h3><input id="owave"  type="range" orient="vertical" value="64"  min="0" max="127" oninput="sliderChange(12,this.value)" /><h3 class="bottom" id="owaveo"  >0</h3></div>
-      <div class="sliderbox rfs"><h3>SUB</h3><input id="sub"    type="range" orient="vertical" value="64"  min="0" max="127" oninput="sliderChange(14,this.value)" /><h3 class="bottom" id="subo"    >0</h3></div>
-      <div class="sliderbox rfs"><h3>NS </h3><input id="noise"  type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange(15,this.value)" /><h3 class="bottom" id="noiseo"  >0</h3></div>
-      <div class="sliderbox rfs"><h3>PW </h3><input id="pulse"  type="range" orient="vertical" value="64"  min="0" max="127" oninput="sliderChange(11,this.value)" /><h3 class="bottom" id="pulseo"  >0</h3></div>
-      <div class="sliderbox rfs"><h3>DTN</h3><input id="detune" type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange(18,this.value)" /><h3 class="bottom" id="detuneo" >0</h3></div>
-      <div class="sliderbox rfs"><h3>LVL</h3><input id="olevel" type="range" orient="vertical" value="127" min="0" max="127" oninput="sliderChange(13,this.value)" /><h3 class="bottom" id="olevelo" >0</h3></div>
-      <div class="sliderbox rfs"><h3>LFO</h3><input id="olfoa"  type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange(16,this.value)" /><h3 class="bottom" id="olfoao"  >0</h3></div>
-      <div class="sliderbox rfs"><h3>FEG</h3><input id="oeg"    type="range" orient="vertical" value="64"  min="0" max="127" oninput="sliderChange(17,this.value)" /><h3 class="bottom" id="oego"    >0</h3></div>
+      <div class="sliderbox rfs"><h3>WAV</h3><input id="owave"  type="range" orient="vertical" value="64"  min="0" max="127" oninput="sliderChange(70,this.value)" /><h3 class="bottom" id="owaveo"  >0</h3></div>
+      <div class="sliderbox rfs"><h3>SUB</h3><input id="sub"    type="range" orient="vertical" value="64"  min="0" max="127" oninput="sliderChange(10,this.value)" /><h3 class="bottom" id="subo"    >0</h3></div>
+      <div class="sliderbox rfs"><h3>NS </h3><input id="noise"  type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange(11,this.value)" /><h3 class="bottom" id="noiseo"  >0</h3></div>
+      <div class="sliderbox rfs"><h3>PW </h3><input id="pulse"  type="range" orient="vertical" value="64"  min="0" max="127" oninput="sliderChange(12,this.value)" /><h3 class="bottom" id="pulseo"  >0</h3></div>
+      <div class="sliderbox rfs"><h3>DTN</h3><input id="detune" type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange(15,this.value)" /><h3 class="bottom" id="detuneo" >0</h3></div>
+      <div class="sliderbox rfs"><h3>LVL</h3><input id="olevel" type="range" orient="vertical" value="127" min="0" max="127" oninput="sliderChange( 9,this.value)" /><h3 class="bottom" id="olevelo" >0</h3></div>
+      <div class="sliderbox rfs"><h3>LFO</h3><input id="olfoa"  type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange(13,this.value)" /><h3 class="bottom" id="olfoao"  >0</h3></div>
+      <div class="sliderbox rfs"><h3>FEG</h3><input id="oeg"    type="range" orient="vertical" value="64"  min="0" max="127" oninput="sliderChange(14,this.value)" /><h3 class="bottom" id="oego"    >0</h3></div>
       <div class="sliderbox rfs"><h3>GD </h3><input id="glide"  type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange( 5,this.value)" /><h3 class="bottom" id="glideo"  >0</h3></div>
-      <div class="sliderbox rfs"><h3>CRD</h3><input id="chord"  type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange(19,this.value)" /><h3 class="bottom" id="chordo"  >0</h3></div>
+      <div class="sliderbox rfs"><h3>CRD</h3><input id="chord"  type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange(16,this.value)" /><h3 class="bottom" id="chordo"  >0</h3></div>
     </div>
     
     <div class="section filt">
@@ -70,7 +70,7 @@
     </div>
     
     <div class="section ampeg">
-      <h2>Amp ADSR envelope (EG1)</h2>
+      <h2>Amp ADSR<br>envelope (EG1)</h2>
       <div class="sliderbox rfs"><h3>A</h3> <input id="ampa" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(24,this.value)" /><h3 class="bottom" id="ampao">0</h3></div>
       <div class="sliderbox rfs"><h3>D</h3> <input id="ampd" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(25,this.value)" /><h3 class="bottom" id="ampdo">0</h3></div>
       <div class="sliderbox rfs"><h3>S</h3> <input id="amps" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(26,this.value)" /><h3 class="bottom" id="ampso">0</h3></div>
@@ -78,14 +78,14 @@
     </div>
     
     <div class="section filteg">
-      <h2>LPF ADSR envelope (EG2)</h2>
+      <h2>LPF ADSR<br>envelope (EG2)</h2>
       <div class="sliderbox rfs"><h3>A</h3> <input id="filta" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(20,this.value)" /><h3 class="bottom" id="filtao">0</h3></div>
       <div class="sliderbox rfs"><h3>D</h3> <input id="filtd" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(21,this.value)" /><h3 class="bottom" id="filtdo">0</h3></div>
       <div class="sliderbox rfs"><h3>S</h3> <input id="filts" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(22,this.value)" /><h3 class="bottom" id="filtso">0</h3></div>
       <div class="sliderbox rfs"><h3>R</h3> <input id="filtr" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(23,this.value)" /><h3 class="bottom" id="filtro">0</h3></div>
     </div>
     
-    <div class="section lfoa">
+    <div class="section lfo">
       <h2>LFO 1 (Polyphonic)</h2>
       <div class="sliderbox rfs"><h3>RT</h3> <input id="lfoar" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(31,this.value)" /><h3 class="bottom" id="lfoaro">0</h3></div>
       <div class="sliderbox rfs"><h3>WV</h3> <input id="lfoaw" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(32,this.value)" /><h3 class="bottom" id="lfoawo">0</h3></div>
@@ -96,17 +96,21 @@
     </div>
 
     <div class="section general">
-      <h2>General</h2>
+      <h2>General & Reverb</h2>
       <div class="sliderbox"><h3 class="small">MODE</h3> <input id="pmode" type="range" orient="vertical" value="0"   min="0" max="5"   oninput="sliderChange(17,this.value)" /><h3 class="bottom small" id="pmodeo">POL</h3></div>
       <div class="sliderbox"><h3 class="small">Vol.</h3> <input id="alvl"  type="range" orient="vertical" value="127" min="0" max="127" oninput="sliderChange( 7,this.value)" /><h3 class="bottom" id="alvlo">0</h3></div>
-      <div class="sliderbox"><h3 class="small">Legato</h3> <input id="legat" type="range" orient="vertical" value="0"   min="0" max="1"   oninput="sliderChange(68,this.value)" /><h3 class="bottom" id="legato">0</h3></div>
+      <!-- <div class="sliderbox"><h3 class="small">Legato</h3> <input id="legat" type="range" orient="vertical" value="0"   min="0" max="1"   oninput="sliderChange(68,this.value)" /><h3 class="bottom" id="legato">0</h3></div> -->
+      <div class="sliderbox rfs"><h3>SZ </h3> <input id="revs" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(44,this.value)" /><h3 class="bottom" id="revso">0</h3></div>
+      <div class="sliderbox rfs"><h3>DC </h3> <input id="revd" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(45,this.value)" /><h3 class="bottom" id="revdo">0</h3></div>
+      <div class="sliderbox rfs"><h3>FLT</h3> <input id="revf" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(46,this.value)" /><h3 class="bottom" id="revfo">0</h3></div>
+      <div class="sliderbox rfs"><h3>MX </h3> <input id="revm" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(47,this.value)" /><h3 class="bottom" id="revmo">0</h3></div>
     </div>
 
     <div class="floatclear"></div>
 
     <!-- ============================================ LFO 2 ============================================ -->
 
-    <div class="section lfooscmod">
+    <div class="section osc">
       <h2>LFO 2 OSC Mod</h2>
       <div class="sliderbox rfs"><h3>WAV</h3><input id="lfobowave0"  type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(51,this.value,0)" /><h3 class="bottom" id="lfobowaveo0"  >0</h3></div>
       <div class="sliderbox rfs"><h3>SUB</h3><input id="lfobsub0"    type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(53,this.value,0)" /><h3 class="bottom" id="lfobsubo0"    >0</h3></div>
@@ -120,7 +124,7 @@
       <div class="sliderbox rfs"><h3>CRD</h3><input id="lfobchord0"  type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(59,this.value,0)" /><h3 class="bottom" id="lfobchordo0"  >0</h3></div>
     </div>
 
-    <div class="section lfofiltmod">
+    <div class="section filt">
       <h2>LFO 2 FILT Mod</h2>
       <div class="sliderbox rfs"><h3>CUT</h3> <input id="lfobfcut0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(61,this.value,0)" /><h3 class="bottom" id="lfobfcuto0">0</h3></div>
       <div class="sliderbox rfs"><h3>RES</h3> <input id="lfobfres0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(62,this.value,0)" /><h3 class="bottom" id="lfobfreso0">0</h3></div>
@@ -130,23 +134,23 @@
       <div class="sliderbox rfs"><h3>EG </h3> <input id="lfobfegn0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(63,this.value,0)" /><h3 class="bottom" id="lfobfegno0">0</h3></div>
     </div>
 
-    <div class="section filtegmod">
-      <h2>LFO 2 FEG Mod</h2>
-      <div class="sliderbox rfs"><h3>A</h3> <input id="lfobfilta0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(69,this.value,0)" /><h3 class="bottom" id="lfobfiltao0">0</h3></div>
-      <div class="sliderbox rfs"><h3>D</h3> <input id="lfobfiltd0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(70,this.value,0)" /><h3 class="bottom" id="lfobfiltdo0">0</h3></div>
-      <div class="sliderbox rfs"><h3>S</h3> <input id="lfobfilts0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(71,this.value,0)" /><h3 class="bottom" id="lfobfiltso0">0</h3></div>
-      <div class="sliderbox rfs"><h3>R</h3> <input id="lfobfiltr0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(72,this.value,0)" /><h3 class="bottom" id="lfobfiltro0">0</h3></div>
-    </div>
-    
-    <div class="section ampegmod">
-      <h2>LFO 2 AEG Mod</h2>
+    <div class="section ampeg">
+      <h2>LFO 2 AEG<br>Mod</h2>
       <div class="sliderbox rfs"><h3>A</h3> <input id="lfobampa0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(73,this.value,0)" /><h3 class="bottom" id="lfobampao0">0</h3></div>
       <div class="sliderbox rfs"><h3>D</h3> <input id="lfobampd0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(74,this.value,0)" /><h3 class="bottom" id="lfobampdo0">0</h3></div>
       <div class="sliderbox rfs"><h3>S</h3> <input id="lfobamps0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(75,this.value,0)" /><h3 class="bottom" id="lfobampso0">0</h3></div>
       <div class="sliderbox rfs"><h3>R</h3> <input id="lfobampr0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(76,this.value,0)" /><h3 class="bottom" id="lfobampro0">0</h3></div>
     </div>
 
-    <div class="section lfob">
+    <div class="section filteg">
+      <h2>LFO 2 FEG<br>Mod</h2>
+      <div class="sliderbox rfs"><h3>A</h3> <input id="lfobfilta0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(69,this.value,0)" /><h3 class="bottom" id="lfobfiltao0">0</h3></div>
+      <div class="sliderbox rfs"><h3>D</h3> <input id="lfobfiltd0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(70,this.value,0)" /><h3 class="bottom" id="lfobfiltdo0">0</h3></div>
+      <div class="sliderbox rfs"><h3>S</h3> <input id="lfobfilts0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(71,this.value,0)" /><h3 class="bottom" id="lfobfiltso0">0</h3></div>
+      <div class="sliderbox rfs"><h3>R</h3> <input id="lfobfiltr0" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(72,this.value,0)" /><h3 class="bottom" id="lfobfiltro0">0</h3></div>
+    </div>
+
+    <div class="section lfo">
       <h2>LFO 2</h2>
       <div class="sliderbox rfs"><h3>RT </h3> <input id="lfobr" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(37,this.value)" /><h3 class="bottom" id="lfobro">0</h3></div>
       <div class="sliderbox rfs"><h3>WV </h3> <input id="lfobw" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(38,this.value)" /><h3 class="bottom" id="lfobwo">0</h3></div>
@@ -160,7 +164,7 @@
 
     <!-- ============================================ Modwheel ============================================ -->
 
-    <div class="section modwoscmod">
+    <div class="section osc">
       <h2>MODW OSC Mod</h2>
       <div class="sliderbox rfs"><h3>WAV</h3><input id="lfobowave1"  type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(51,this.value,1)" /><h3 class="bottom" id="lfobowaveo1"  >0</h3></div>
       <div class="sliderbox rfs"><h3>SUB</h3><input id="lfobsub1"    type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(53,this.value,1)" /><h3 class="bottom" id="lfobsubo1"    >0</h3></div>
@@ -174,7 +178,7 @@
       <div class="sliderbox rfs"><h3>CRD</h3><input id="lfobchord1"  type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(59,this.value,1)" /><h3 class="bottom" id="lfobchordo1"  >0</h3></div>
     </div>
 
-    <div class="section modwfiltmod">
+    <div class="section filt">
       <h2>MODW FILT Mod</h2>
       <div class="sliderbox rfs"><h3>CUT</h3> <input id="lfobfcut1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(61,this.value,1)" /><h3 class="bottom" id="lfobfcuto1">0</h3></div>
       <div class="sliderbox rfs"><h3>RES</h3> <input id="lfobfres1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(62,this.value,1)" /><h3 class="bottom" id="lfobfreso1">0</h3></div>
@@ -184,23 +188,23 @@
       <div class="sliderbox rfs"><h3>EG </h3> <input id="lfobfegn1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(63,this.value,1)" /><h3 class="bottom" id="lfobfegno1">0</h3></div>
     </div>
 
-    <div class="section modwfiltegmod">
-      <h2>MODW FEG Mod</h2>
-      <div class="sliderbox rfs"><h3>A</h3> <input id="lfobfilta1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(69,this.value,1)" /><h3 class="bottom" id="lfobfiltao1">0</h3></div>
-      <div class="sliderbox rfs"><h3>D</h3> <input id="lfobfiltd1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(70,this.value,1)" /><h3 class="bottom" id="lfobfiltdo1">0</h3></div>
-      <div class="sliderbox rfs"><h3>S</h3> <input id="lfobfilts1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(71,this.value,1)" /><h3 class="bottom" id="lfobfiltso1">0</h3></div>
-      <div class="sliderbox rfs"><h3>R</h3> <input id="lfobfiltr1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(72,this.value,1)" /><h3 class="bottom" id="lfobfiltro1">0</h3></div>
-    </div>
-    
-    <div class="section modwampegmod">
-      <h2>MODW AEG Mod</h2>
+    <div class="section ampeg">
+      <h2>MODW AEG<br>Mod</h2>
       <div class="sliderbox rfs"><h3>A</h3> <input id="lfobampa1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(73,this.value,1)" /><h3 class="bottom" id="lfobampao1">0</h3></div>
       <div class="sliderbox rfs"><h3>D</h3> <input id="lfobampd1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(74,this.value,1)" /><h3 class="bottom" id="lfobampdo1">0</h3></div>
       <div class="sliderbox rfs"><h3>S</h3> <input id="lfobamps1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(75,this.value,1)" /><h3 class="bottom" id="lfobampso1">0</h3></div>
       <div class="sliderbox rfs"><h3>R</h3> <input id="lfobampr1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(76,this.value,1)" /><h3 class="bottom" id="lfobampro1">0</h3></div>
     </div>
 
-    <div class="section modwampegmod">
+    <div class="section filteg">
+      <h2>MODW FEG<br>Mod</h2>
+      <div class="sliderbox rfs"><h3>A</h3> <input id="lfobfilta1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(69,this.value,1)" /><h3 class="bottom" id="lfobfiltao1">0</h3></div>
+      <div class="sliderbox rfs"><h3>D</h3> <input id="lfobfiltd1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(70,this.value,1)" /><h3 class="bottom" id="lfobfiltdo1">0</h3></div>
+      <div class="sliderbox rfs"><h3>S</h3> <input id="lfobfilts1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(71,this.value,1)" /><h3 class="bottom" id="lfobfiltso1">0</h3></div>
+      <div class="sliderbox rfs"><h3>R</h3> <input id="lfobfiltr1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(72,this.value,1)" /><h3 class="bottom" id="lfobfiltro1">0</h3></div>
+    </div>
+    
+    <div class="section lfo">
       <h2>MODW LFO1 Mod</h2>
       <div class="sliderbox rfs"><h3>RT </h3> <input id="lfoblfoar1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(77,this.value,1)" /><h3 class="bottom" id="lfoblfoaro1">0</h3></div>
       <div class="sliderbox rfs"><h3>WV </h3> <input id="lfoblfoaw1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(78,this.value,1)" /><h3 class="bottom" id="lfoblfoawo1">0</h3></div>
@@ -208,7 +212,7 @@
       <div class="sliderbox rfs"><h3>FD </h3> <input id="lfoblfoaf1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(80,this.value,1)" /><h3 class="bottom" id="lfoblfoafo1">0</h3></div>
     </div>
 
-    <div class="section modwampegmod">
+    <div class="section lfo">
       <h2>MODW LFO2 Mod</h2>
       <div class="sliderbox rfs"><h3>RT </h3> <input id="lfoblfobar1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(81,this.value,1)" /><h3 class="bottom" id="lfoblfobaro1">0</h3></div>
       <div class="sliderbox rfs"><h3>WV </h3> <input id="lfoblfobaw1" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(82,this.value,1)" /><h3 class="bottom" id="lfoblfobawo1">0</h3></div>
@@ -220,7 +224,7 @@
 
     <!-- ============================================ Velocity ============================================ -->
 
-    <div class="section modwoscmod">
+    <div class="section osc">
       <h2>VELOC OSC Mod</h2>
       <div class="sliderbox rfs"><h3>WAV</h3><input id="lfobowave2"  type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(51,this.value,2)" /><h3 class="bottom" id="lfobowaveo2"  >0</h3></div>
       <div class="sliderbox rfs"><h3>SUB</h3><input id="lfobsub2"    type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(53,this.value,2)" /><h3 class="bottom" id="lfobsubo2"    >0</h3></div>
@@ -234,7 +238,7 @@
       <div class="sliderbox rfs"><h3>CRD</h3><input id="lfobchord2"  type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(59,this.value,2)" /><h3 class="bottom" id="lfobchordo2"  >0</h3></div>
     </div>
 
-    <div class="section modwfiltmod">
+    <div class="section filt">
       <h2>VELOC FILT Mod</h2>
       <div class="sliderbox rfs"><h3>CUT</h3> <input id="lfobfcut2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(61,this.value,2)" /><h3 class="bottom" id="lfobfcuto2">0</h3></div>
       <div class="sliderbox rfs"><h3>RES</h3> <input id="lfobfres2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(62,this.value,2)" /><h3 class="bottom" id="lfobfreso2">0</h3></div>
@@ -243,24 +247,24 @@
       <div class="sliderbox rfs"><h3>LFO</h3> <input id="lfobflfo2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(67,this.value,2)" /><h3 class="bottom" id="lfobflfoo2">0</h3></div>
       <div class="sliderbox rfs"><h3>EG </h3> <input id="lfobfegn2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(63,this.value,2)" /><h3 class="bottom" id="lfobfegno2">0</h3></div>
     </div>
-
-    <div class="section modwfiltegmod">
-      <h2>VELOC FEG Mod</h2>
-      <div class="sliderbox rfs"><h3>A</h3> <input id="lfobfilta2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(69,this.value,2)" /><h3 class="bottom" id="lfobfiltao2">0</h3></div>
-      <div class="sliderbox rfs"><h3>D</h3> <input id="lfobfiltd2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(70,this.value,2)" /><h3 class="bottom" id="lfobfiltdo2">0</h3></div>
-      <div class="sliderbox rfs"><h3>S</h3> <input id="lfobfilts2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(71,this.value,2)" /><h3 class="bottom" id="lfobfiltso2">0</h3></div>
-      <div class="sliderbox rfs"><h3>R</h3> <input id="lfobfiltr2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(72,this.value,2)" /><h3 class="bottom" id="lfobfiltro2">0</h3></div>
-    </div>
     
-    <div class="section modwampegmod">
-      <h2>VELOC AEG Mod</h2>
+    <div class="section ampeg">
+      <h2>VELOC AEG<br>Mod</h2>
       <div class="sliderbox rfs"><h3>A</h3> <input id="lfobampa2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(73,this.value,2)" /><h3 class="bottom" id="lfobampao2">0</h3></div>
       <div class="sliderbox rfs"><h3>D</h3> <input id="lfobampd2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(74,this.value,2)" /><h3 class="bottom" id="lfobampdo2">0</h3></div>
       <div class="sliderbox rfs"><h3>S</h3> <input id="lfobamps2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(75,this.value,2)" /><h3 class="bottom" id="lfobampso2">0</h3></div>
       <div class="sliderbox rfs"><h3>R</h3> <input id="lfobampr2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(76,this.value,2)" /><h3 class="bottom" id="lfobampro2">0</h3></div>
     </div>
 
-    <div class="section modwampegmod">
+    <div class="section filteg">
+      <h2>VELOC FEG<br>Mod</h2>
+      <div class="sliderbox rfs"><h3>A</h3> <input id="lfobfilta2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(69,this.value,2)" /><h3 class="bottom" id="lfobfiltao2">0</h3></div>
+      <div class="sliderbox rfs"><h3>D</h3> <input id="lfobfiltd2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(70,this.value,2)" /><h3 class="bottom" id="lfobfiltdo2">0</h3></div>
+      <div class="sliderbox rfs"><h3>S</h3> <input id="lfobfilts2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(71,this.value,2)" /><h3 class="bottom" id="lfobfiltso2">0</h3></div>
+      <div class="sliderbox rfs"><h3>R</h3> <input id="lfobfiltr2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(72,this.value,2)" /><h3 class="bottom" id="lfobfiltro2">0</h3></div>
+    </div>
+
+    <div class="section lfo">
       <h2>VELOC LFO1 Mod</h2>
       <div class="sliderbox rfs"><h3>RT </h3> <input id="lfoblfoar2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(77,this.value,2)" /><h3 class="bottom" id="lfoblfoaro2">0</h3></div>
       <div class="sliderbox rfs"><h3>WV </h3> <input id="lfoblfoaw2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(78,this.value,2)" /><h3 class="bottom" id="lfoblfoawo2">0</h3></div>
@@ -268,7 +272,7 @@
       <div class="sliderbox rfs"><h3>FD </h3> <input id="lfoblfoaf2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(80,this.value,2)" /><h3 class="bottom" id="lfoblfoafo2">0</h3></div>
     </div>
 
-    <div class="section modwampegmod">
+    <div class="section lfo">
       <h2>VELOC LFO2 Mod</h2>
       <div class="sliderbox rfs"><h3>RT </h3> <input id="lfoblfobar2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(81,this.value,2)" /><h3 class="bottom" id="lfoblfobaro2">0</h3></div>
       <div class="sliderbox rfs"><h3>WV </h3> <input id="lfoblfobaw2" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(82,this.value,2)" /><h3 class="bottom" id="lfoblfobawo2">0</h3></div>
@@ -280,7 +284,7 @@
 
     <!-- ============================================ Aftertouch ============================================ -->
 
-    <div class="section modwoscmod">
+    <div class="section osc">
       <h2>AFTER OSC Mod</h2>
       <div class="sliderbox rfs"><h3>WAV</h3><input id="lfobowave3"  type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(51,this.value,3)" /><h3 class="bottom" id="lfobowaveo3"  >0</h3></div>
       <div class="sliderbox rfs"><h3>SUB</h3><input id="lfobsub3"    type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(53,this.value,3)" /><h3 class="bottom" id="lfobsubo3"    >0</h3></div>
@@ -294,7 +298,7 @@
       <div class="sliderbox rfs"><h3>CRD</h3><input id="lfobchord3"  type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(59,this.value,3)" /><h3 class="bottom" id="lfobchordo3"  >0</h3></div>
     </div>
 
-    <div class="section modwfiltmod">
+    <div class="section filt">
       <h2>AFTER FILT Mod</h2>
       <div class="sliderbox rfs"><h3>CUT</h3> <input id="lfobfcut3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(61,this.value,3)" /><h3 class="bottom" id="lfobfcuto3">0</h3></div>
       <div class="sliderbox rfs"><h3>RES</h3> <input id="lfobfres3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(62,this.value,3)" /><h3 class="bottom" id="lfobfreso3">0</h3></div>
@@ -303,24 +307,24 @@
       <div class="sliderbox rfs"><h3>LFO</h3> <input id="lfobflfo3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(67,this.value,3)" /><h3 class="bottom" id="lfobflfoo3">0</h3></div>
       <div class="sliderbox rfs"><h3>EG </h3> <input id="lfobfegn3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(63,this.value,3)" /><h3 class="bottom" id="lfobfegno3">0</h3></div>
     </div>
-
-    <div class="section modwfiltegmod">
-      <h2>AFTER FEG Mod</h2>
-      <div class="sliderbox rfs"><h3>A</h3> <input id="lfobfilta3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(69,this.value,3)" /><h3 class="bottom" id="lfobfiltao3">0</h3></div>
-      <div class="sliderbox rfs"><h3>D</h3> <input id="lfobfiltd3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(70,this.value,3)" /><h3 class="bottom" id="lfobfiltdo3">0</h3></div>
-      <div class="sliderbox rfs"><h3>S</h3> <input id="lfobfilts3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(71,this.value,3)" /><h3 class="bottom" id="lfobfiltso3">0</h3></div>
-      <div class="sliderbox rfs"><h3>R</h3> <input id="lfobfiltr3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(72,this.value,3)" /><h3 class="bottom" id="lfobfiltro3">0</h3></div>
-    </div>
     
-    <div class="section modwampegmod">
-      <h2>AFTER AEG Mod</h2>
+    <div class="section ampeg">
+      <h2>AFTER AEG<br>Mod</h2>
       <div class="sliderbox rfs"><h3>A</h3> <input id="lfobampa3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(73,this.value,3)" /><h3 class="bottom" id="lfobampao3">0</h3></div>
       <div class="sliderbox rfs"><h3>D</h3> <input id="lfobampd3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(74,this.value,3)" /><h3 class="bottom" id="lfobampdo3">0</h3></div>
       <div class="sliderbox rfs"><h3>S</h3> <input id="lfobamps3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(75,this.value,3)" /><h3 class="bottom" id="lfobampso3">0</h3></div>
       <div class="sliderbox rfs"><h3>R</h3> <input id="lfobampr3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(76,this.value,3)" /><h3 class="bottom" id="lfobampro3">0</h3></div>
     </div>
 
-    <div class="section modwampegmod">
+    <div class="section filteg">
+      <h2>AFTER FEG<br>Mod</h2>
+      <div class="sliderbox rfs"><h3>A</h3> <input id="lfobfilta3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(69,this.value,3)" /><h3 class="bottom" id="lfobfiltao3">0</h3></div>
+      <div class="sliderbox rfs"><h3>D</h3> <input id="lfobfiltd3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(70,this.value,3)" /><h3 class="bottom" id="lfobfiltdo3">0</h3></div>
+      <div class="sliderbox rfs"><h3>S</h3> <input id="lfobfilts3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(71,this.value,3)" /><h3 class="bottom" id="lfobfiltso3">0</h3></div>
+      <div class="sliderbox rfs"><h3>R</h3> <input id="lfobfiltr3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(72,this.value,3)" /><h3 class="bottom" id="lfobfiltro3">0</h3></div>
+    </div>
+
+    <div class="section lfo">
       <h2>AFTER LFO1 Mod</h2>
       <div class="sliderbox rfs"><h3>RT </h3> <input id="lfoblfoar3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(77,this.value,3)" /><h3 class="bottom" id="lfoblfoaro3">0</h3></div>
       <div class="sliderbox rfs"><h3>WV </h3> <input id="lfoblfoaw3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(78,this.value,3)" /><h3 class="bottom" id="lfoblfoawo3">0</h3></div>
@@ -328,7 +332,7 @@
       <div class="sliderbox rfs"><h3>FD </h3> <input id="lfoblfoaf3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(80,this.value,3)" /><h3 class="bottom" id="lfoblfoafo3">0</h3></div>
     </div>
 
-    <div class="section modwampegmod">
+    <div class="section lfo">
       <h2>AFTER LFO2 Mod</h2>
       <div class="sliderbox rfs"><h3>RT </h3> <input id="lfoblfobar3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(81,this.value,3)" /><h3 class="bottom" id="lfoblfobaro3">0</h3></div>
       <div class="sliderbox rfs"><h3>WV </h3> <input id="lfoblfobaw3" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(82,this.value,3)" /><h3 class="bottom" id="lfoblfobawo3">0</h3></div>
@@ -338,18 +342,6 @@
 
     <div class="floatclear"></div>
 
-    <!-- ============================================ Miscellaneous ============================================ -->
-
-    <div class="section reverb">
-      <h2>REVERB</h2>
-      <div class="sliderbox rfs"><h3>SZ </h3> <input id="revs" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(44,this.value)" /><h3 class="bottom" id="revso">0</h3></div>
-      <div class="sliderbox rfs"><h3>DC </h3> <input id="revd" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(45,this.value)" /><h3 class="bottom" id="revdo">0</h3></div>
-      <div class="sliderbox rfs"><h3>FLT</h3> <input id="revf" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(46,this.value)" /><h3 class="bottom" id="revfo">0</h3></div>
-      <div class="sliderbox rfs"><h3>MX </h3> <input id="revm" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(47,this.value)" /><h3 class="bottom" id="revmo">0</h3></div>
-    </div>
-
-    <div class="floatclear"></div>
-    
   </div>
 
   <script src="/scripts/main.js"></script> 
