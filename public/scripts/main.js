@@ -367,14 +367,14 @@ function sendSlider(valA,valB,valC){
 }
 
 function noteOn(note) { // later on, add [note, velocity, duration=0] to attributes
-    // console.log(`starting note ${note}`)
+    if (test_mode) { console.log(`starting note ${note}`) }
     var outputMidiChannel = channelOut.selectedIndex - 1;
     const device = midiOut[selectOut.selectedIndex];
     device.send([0x90 + outputMidiChannel, note, 0x7f]); // send full velocity note-ON (0x90) on channel (0x01)
 }
 
 function noteOff(note) { // later on, add [note, velocity, duration=0] to attributes
-    // console.log(`stopping note ${note}`)
+    if (test_mode) { console.log(`stopping note ${note}`) }
     var outputMidiChannel = channelOut.selectedIndex - 1;
     const device = midiOut[selectOut.selectedIndex];
     device.send([0x90 + outputMidiChannel, note, 0]); // send full velocity note-OFF on channel 0
@@ -391,11 +391,11 @@ Array.from(document.getElementsByClassName('keyboard-key')).forEach(key => {
     })
 });
 
-document.addEventListener('keypress', event => {
+document.addEventListener('keydown', event => {
+    if (event.repeat) { return; } // avoid sending multiple time the note if key is still pressed
     keys_to_capture = Object.keys(keys_notes);
     pressed_key = event.key;
     if (keys_to_capture.includes(pressed_key)) {
-        // console.log(event.key + " is a target key");
         note_to_play = keys_notes[pressed_key]
         document.querySelector(`td[data_note_number="${note_to_play}"]`).setAttribute('style', 'background-color: purple');
         noteOn(note_to_play);
@@ -406,7 +406,6 @@ document.addEventListener('keyup', event => {
     keys_to_capture = Object.keys(keys_notes);
     pressed_key = event.key;
     if (keys_to_capture.includes(pressed_key)) {
-        // console.log(event.key + " is a target key");
         note_to_play = keys_notes[pressed_key]
         document.querySelector(`td[data_note_number="${note_to_play}"]`).removeAttribute('style');
         noteOff(keys_notes[pressed_key]);
