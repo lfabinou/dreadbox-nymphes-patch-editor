@@ -1,3 +1,5 @@
+var test_mode = window.location.href.includes('test=1')
+
 var range = document.querySelector('#fcut'),
     value = document.querySelector('.range-value');
     
@@ -127,6 +129,9 @@ function sliderChange(type,val,mode=-1) {
     }else{
         document.querySelector('#'+outIds[type]+'o').innerHTML = out;
         patch['data'][0][type] = parseInt(val,10);
+    }
+    if (test_mode) {
+        console.log(`Sending slider #CC${type} with value=${val}`)
     }
     sendSlider(176, type, val);
 }    
