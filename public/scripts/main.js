@@ -6,51 +6,51 @@ var range = document.querySelector('#fcut'),
 let outIds = [
     /*  0 */    '',
     /*  1 */    '',
-    /*  2 */    '',
-    /*  3 */    'fhpf',
-    /*  4 */    'fcut',
+    /*  2 */    'lfobampd',
+    /*  3 */    'fegn',
+    /*  4 */    'ftrk',
     /*  5 */    'glide',
-    /*  6 */    'ftrk',
+    /*  6 */    'lfobfilts',
     /*  7 */    'alvl',
-    /*  8 */    'fres',
-    /*  9 */    'fegn',
-    /* 10 */    'flfo',
+    /*  8 */    'flfo',
+    /*  9 */    'olevel',
+    /* 10 */    'sub',
 
-    /* 11 */    'pulse',
-    /* 12 */    'owave',
-    /* 13 */    'olevel',
-    /* 14 */    'sub',
-    /* 15 */    'noise',
-    /* 16 */    'olfoa',
-    /* 17 */    'oeg',
-    /* 18 */    'detune',
-    /* 19 */    'chord',
+    /* 11 */    'noise',
+    /* 12 */    'pulse',
+    /* 13 */    'olfoa',
+    /* 14 */    'oeg',
+    /* 15 */    'detune',
+    /* 16 */    'chord',
+    /* 17 */    'lfoblfobar',
+    /* 18 */    'lfoar',
+    /* 19 */    'lfoaw',
 
-    /* 20 */    'filta',
-    /* 21 */    'filtd',
-    /* 22 */    'filts',
-    /* 23 */    'filtr',
-    /* 24 */    'ampa',
-    /* 25 */    'ampd',
-    /* 26 */    'amps',
-    /* 27 */    'ampr',
-    /* 28 */    '',
-    /* 29 */    '',
+    /* 20 */    'lfoad',
+    /* 21 */    'lfoaf',
+    /* 22 */    'lfoas',
+    /* 23 */    'lfoac',
+    /* 24 */    'lfobampa',
+    /* 25 */    'lfoblfobaf',
+    /* 26 */    '',
+    /* 27 */    'lfobfiltr',
+    /* 28 */    'lfobs',
+    /* 29 */    'lfobc',
     /* 30 */    'pmode',        // Play Modus
 
-    /* 31 */    'lfoar',
-    /* 32 */    'lfoaw',
-    /* 33 */    'lfoad',
-    /* 34 */    'lfoaf',
-    /* 35 */    'lfoas',
-    /* 36 */    'lfoac',
+    /* 31 */    'lfobfiltd',
+    /* 32 */    'lfoblfobaw',
+    /* 33 */    'lfoblfoad',
+    /* 34 */    'lfoblfoaf',
+    /* 35 */    'lfoblfobad',
+    /* 36 */    '',
 
     /* 37 */    'lfobr',
     /* 38 */    'lfobw',
     /* 39 */    'lfobd',
     /* 40 */    'lfobf',
-    /* 41 */    'lfobs',
-    /* 42 */    'lfobc',
+    /* 41 */    '',
+    /* 42 */    '',
 
     /* 43 */    '',
     /* 44 */    'revs',
@@ -82,24 +82,25 @@ let outIds = [
     /* 68 */    'legat',
 
     /* 69 */    'lfobfilta',
-    /* 70 */    'lfobfiltd',
-    /* 71 */    'lfobfilts',
-    /* 72 */    'lfobfiltr',
+    /* 70 */    'owave',
+    /* 71 */    'fres',
+    /* 72 */    'ampr',
 
-    /* 73 */    'lfobampa',
-    /* 74 */    'lfobampd',
+    /* 73 */    'ampa',
+    /* 74 */    'fcut',
     /* 75 */    'lfobamps',
     /* 76 */    'lfobampr',
 
     /* 77 */    'lfoblfoar', 
     /* 78 */    'lfoblfoaw', 
-    /* 79 */    'lfoblfoad', 
-    /* 80 */    'lfoblfoaf', 
+    /* 79 */    'filta', 
+    /* 80 */    'filtd', 
 
-    /* 81 */    'lfoblfobar', 
-    /* 82 */    'lfoblfobaw', 
-    /* 83 */    'lfoblfobad', 
-    /* 84 */    'lfoblfobaf', 
+    /* 81 */    'fhpf', 
+    /* 82 */    'filts', 
+    /* 83 */    'filtr', 
+    /* 84 */    'ampd', 
+    /* 85 */    'amps', 
 ];
 
 var patch   = {'name' : '', 'data' : [ Array(85).fill(0), Array(85).fill(0), Array(85).fill(0), Array(85).fill(0) ] }; 
@@ -108,7 +109,7 @@ let syncs   = ['OFF','ON'];
 let modes   = ['POL','UNA','UNB','TRI','DUO','MON'];
 let isSpeed = [35,41];
 let isSync  = [36,42];
-let isMod   = [51,52,53,54,55,56,57,58,59,60,61,62,63,65,66,67,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84];
+let isMod   = [51,52,53,54,55,56,57,58,59,60,61,62,63,65,66,67,69,75,76,77,78];
 var modType = 0;
 
 function sliderChange(type,val,mode=-1) {
@@ -194,10 +195,10 @@ function load(){
                     if(isSpeed.indexOf(type) !== -1){ out = speeds[val]; }
                     if(isSync.indexOf(type)  !== -1){ out = syncs[val]; }
                 
-                    if((mod >0)||(type>50)){
+                    if((mod >0)||(type>50)) {
                         document.querySelector('#'+outIds[type]+mod).value = val;    
                         document.querySelector('#'+outIds[type]+'o'+mod).innerHTML = out;    
-                    }else{
+                    } else {
                         if(outIds[type]!=''){
                             document.querySelector('#'+outIds[type]).value = val;  
                             document.querySelector('#'+outIds[type]+'o').innerHTML = out;      
@@ -302,23 +303,26 @@ function startListening() {
 }
   
 function midiMessageReceived(event) {
-    if(Number.isInteger(event.data[1])){
+    var cc_code = event.data[1]
+    var cc_value = event.data[2];
+    if(Number.isInteger(cc_code)){
+        console.log(`Received slider #CC${cc_code} with value=${cc_value}`)
 
-        if(event.data[1]< 50){ modType = 0; }
-        if(event.data[1]==50){ modType = event.data[2]; return; }
-        if((modType==0)&&(event.data[1] >76)){ return; }
+        if(cc_code< 70){ modType = 0; }
+        if(cc_code==50){ modType = cc_value; return; }
+        if((modType==0)&&(cc_code >85)){ return; }
 
-        if((outIds[event.data[1]]!='')&&(outIds[event.data[1]]!= undefined)){            
-            var outId = outIds[event.data[1]];
+        if((outIds[cc_code]!='')&&(outIds[cc_code]!= undefined)){            
+            var outId = outIds[cc_code];
 
-            if(isMod.indexOf(event.data[1]) !== -1){  
-                document.querySelector('#'+outId+'o'+modType).innerHTML = event.data[2];
-                document.querySelector('#'+outId+modType).value = event.data[2]; 
-            }else{
-                document.querySelector('#'+outId+'o').innerHTML = event.data[2];
-                document.querySelector('#'+outId).value = event.data[2];    
+            if(isMod.indexOf(cc_code) !== -1) { // this is a modulation matrix change
+                document.querySelector('#'+outId+'o'+modType).innerHTML = cc_value;
+                document.querySelector('#'+outId+modType).value = cc_value; 
+            } else { // this is a normal change
+                document.querySelector('#'+outId+'o').innerHTML = cc_value;
+                document.querySelector('#'+outId).value = cc_value;    
             }
-            patch['data'][modType][event.data[1]] = parseInt(event.data[2],10);   
+            patch['data'][modType][cc_code] = parseInt(cc_value,10);   
         }
     }
 }
