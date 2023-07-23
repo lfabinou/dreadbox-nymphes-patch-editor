@@ -14,10 +14,9 @@
 
   <div class="main">
 
-    <h1>NYMPHES Patch-Editor <span class="version">V0.3</span></h1>
+    <h1>NYMPHES Patch-Editor <span class="version">V0.4</span></h1>
 
     <div class="section keyboard">
-      <p>Here there'll be a keyboard</p>
       <table>
         <tr>
           <td style="border: 1px solid black; padding: 16px; width: 50px; cursor: pointer;" class="keyboard-key" data_note_number="60">C<br><div style="font-size: 0.5rem;">(A)</div></td>
@@ -43,10 +42,11 @@
       <div class="filebox"><input type="file" name="inputfile" id="inputfile"></div>
       <div class="selectorbox"><span class="port_name">IN</span><select id="selectIn"></select></div>
       <div class="selectorbox"><span class="port_name">OUT</span><select id="selectOut"></select></div>                  
+      <div class="selectorbox"><span class="port_name">OUT channel</span><select id="channelOut"></select></div>                  
     </div>
     
     <div class="section osc">
-      <h2>OSCILLATOR</h2>
+      <h2>Oscillator</h2>
       <div class="sliderbox rfs"><h3>WAV</h3><input id="owave"  type="range" orient="vertical" value="64"  min="0" max="127" oninput="sliderChange(12,this.value)" /><h3 class="bottom" id="owaveo"  >0</h3></div>
       <div class="sliderbox rfs"><h3>SUB</h3><input id="sub"    type="range" orient="vertical" value="64"  min="0" max="127" oninput="sliderChange(14,this.value)" /><h3 class="bottom" id="subo"    >0</h3></div>
       <div class="sliderbox rfs"><h3>NS </h3><input id="noise"  type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange(15,this.value)" /><h3 class="bottom" id="noiseo"  >0</h3></div>
@@ -60,7 +60,7 @@
     </div>
     
     <div class="section filt">
-      <h2>FILTER</h2>
+      <h2>Low-pass filter (LPF)</h2>
       <div class="sliderbox rfs"><h3>CUT</h3> <input id="fcut" type="range" orient="vertical" value="127" min="0" max="127" oninput="sliderChange( 4,this.value)" /><h3 class="bottom" id="fcuto">0</h3></div>
       <div class="sliderbox rfs"><h3>RES</h3> <input id="fres" type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange( 8,this.value)" /><h3 class="bottom" id="freso">0</h3></div>
       <div class="sliderbox rfs"><h3>HPF</h3> <input id="fhpf" type="range" orient="vertical" value="0"   min="0" max="127" oninput="sliderChange( 3,this.value)" /><h3 class="bottom" id="fhpfo">0</h3></div>
@@ -69,37 +69,37 @@
       <div class="sliderbox rfs"><h3>EG </h3> <input id="fegn" type="range" orient="vertical" value="64"  min="0" max="127" oninput="sliderChange( 9,this.value)" /><h3 class="bottom" id="fegno">0</h3></div>
     </div>
     
-    <div class="section filteg">
-      <h2>FILTER EG</h2>
-      <div class="sliderbox rfs"><h3>A</h3> <input id="filta" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(20,this.value)" /><h3 class="bottom" id="filtao">0</h3></div>
-      <div class="sliderbox rfs"><h3>D</h3> <input id="filtd" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(21,this.value)" /><h3 class="bottom" id="filtdo">0</h3></div>
-      <div class="sliderbox rfs"><h3>S</h3> <input id="filts" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(22,this.value)" /><h3 class="bottom" id="filtso">0</h3></div>
-      <div class="sliderbox rfs"><h3>R</h3> <input id="filtr" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(23,this.value)" /><h3 class="bottom" id="filtro">0</h3></div>
-    </div>
-    
     <div class="section ampeg">
-      <h2>AMP EG</h2>
+      <h2>Amp ADSR envelope (EG1)</h2>
       <div class="sliderbox rfs"><h3>A</h3> <input id="ampa" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(24,this.value)" /><h3 class="bottom" id="ampao">0</h3></div>
       <div class="sliderbox rfs"><h3>D</h3> <input id="ampd" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(25,this.value)" /><h3 class="bottom" id="ampdo">0</h3></div>
       <div class="sliderbox rfs"><h3>S</h3> <input id="amps" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(26,this.value)" /><h3 class="bottom" id="ampso">0</h3></div>
       <div class="sliderbox rfs"><h3>R</h3> <input id="ampr" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(27,this.value)" /><h3 class="bottom" id="ampro">0</h3></div>
     </div>
     
+    <div class="section filteg">
+      <h2>LPF ADSR envelope (EG2)</h2>
+      <div class="sliderbox rfs"><h3>A</h3> <input id="filta" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(20,this.value)" /><h3 class="bottom" id="filtao">0</h3></div>
+      <div class="sliderbox rfs"><h3>D</h3> <input id="filtd" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(21,this.value)" /><h3 class="bottom" id="filtdo">0</h3></div>
+      <div class="sliderbox rfs"><h3>S</h3> <input id="filts" type="range" orient="vertical" value="0"  min="0" max="127" oninput="sliderChange(22,this.value)" /><h3 class="bottom" id="filtso">0</h3></div>
+      <div class="sliderbox rfs"><h3>R</h3> <input id="filtr" type="range" orient="vertical" value="64" min="0" max="127" oninput="sliderChange(23,this.value)" /><h3 class="bottom" id="filtro">0</h3></div>
+    </div>
+    
     <div class="section lfoa">
-      <h2>LFO 1</h2>
-      <div class="sliderbox rfs"><h3>RT </h3> <input id="lfoar" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(31,this.value)" /><h3 class="bottom" id="lfoaro">0</h3></div>
-      <div class="sliderbox rfs"><h3>WV </h3> <input id="lfoaw" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(32,this.value)" /><h3 class="bottom" id="lfoawo">0</h3></div>
-      <div class="sliderbox rfs"><h3>DL </h3> <input id="lfoad" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(33,this.value)" /><h3 class="bottom" id="lfoado">0</h3></div>
-      <div class="sliderbox rfs"><h3>FD </h3> <input id="lfoaf" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(34,this.value)" /><h3 class="bottom" id="lfoafo">0</h3></div>
+      <h2>LFO 1 (Polyphonic)</h2>
+      <div class="sliderbox rfs"><h3>RT</h3> <input id="lfoar" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(31,this.value)" /><h3 class="bottom" id="lfoaro">0</h3></div>
+      <div class="sliderbox rfs"><h3>WV</h3> <input id="lfoaw" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(32,this.value)" /><h3 class="bottom" id="lfoawo">0</h3></div>
+      <div class="sliderbox rfs"><h3>DL</h3> <input id="lfoad" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(33,this.value)" /><h3 class="bottom" id="lfoado">0</h3></div>
+      <div class="sliderbox rfs"><h3>FD</h3> <input id="lfoaf" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(34,this.value)" /><h3 class="bottom" id="lfoafo">0</h3></div>
       <div class="sliderbox"><h3>SPD</h3> <input id="lfoas" type="range" orient="vertical" value="0" min="0" max="3"   oninput="sliderChange(35,this.value)" /><h3 class="bottom small" id="lfoaso">BPM</h3></div>
       <div class="sliderbox"><h3>SNC</h3> <input id="lfoac" type="range" orient="vertical" value="0" min="0" max="1"   oninput="sliderChange(36,this.value)" /><h3 class="bottom small" id="lfoaco">OFF</h3></div>
     </div>
 
     <div class="section general">
-      <h2>GENERAL</h2>
-      <div class="sliderbox"><h3>MODE</h3> <input id="pmode" type="range" orient="vertical" value="0"   min="0" max="5"   oninput="sliderChange(17,this.value)" /><h3 class="bottom small" id="pmodeo">POL</h3></div>
-      <div class="sliderbox"><h3>LVL </h3> <input id="alvl"  type="range" orient="vertical" value="127" min="0" max="127" oninput="sliderChange( 7,this.value)" /><h3 class="bottom" id="alvlo">0</h3></div>
-      <div class="sliderbox"><h3>LEG </h3> <input id="legat" type="range" orient="vertical" value="0"   min="0" max="1"   oninput="sliderChange(68,this.value)" /><h3 class="bottom" id="legato">0</h3></div>
+      <h2>General</h2>
+      <div class="sliderbox"><h3 class="small">MODE</h3> <input id="pmode" type="range" orient="vertical" value="0"   min="0" max="5"   oninput="sliderChange(17,this.value)" /><h3 class="bottom small" id="pmodeo">POL</h3></div>
+      <div class="sliderbox"><h3 class="small">Vol.</h3> <input id="alvl"  type="range" orient="vertical" value="127" min="0" max="127" oninput="sliderChange( 7,this.value)" /><h3 class="bottom" id="alvlo">0</h3></div>
+      <div class="sliderbox"><h3 class="small">Legato</h3> <input id="legat" type="range" orient="vertical" value="0"   min="0" max="1"   oninput="sliderChange(68,this.value)" /><h3 class="bottom" id="legato">0</h3></div>
     </div>
 
     <div class="floatclear"></div>

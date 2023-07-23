@@ -22,7 +22,7 @@ let outIds = [
     /* 14 */    'oeg',
     /* 15 */    'detune',
     /* 16 */    'chord',
-    /* 17 */    'lfoblfobar',
+    /* 17 */    'pmode',
     /* 18 */    'lfoar',
     /* 19 */    'lfoaw',
 
@@ -36,7 +36,7 @@ let outIds = [
     /* 27 */    'lfobfiltr',
     /* 28 */    'lfobs',
     /* 29 */    'lfobc',
-    /* 30 */    'pmode',        // Play Modus
+    /* 30 */    'lfoblfobar',
 
     /* 31 */    'lfobfiltd',
     /* 32 */    'lfoblfobaw',
@@ -106,9 +106,9 @@ let outIds = [
 var patch   = {'name' : '', 'data' : [ Array(85).fill(0), Array(85).fill(0), Array(85).fill(0), Array(85).fill(0) ] }; 
 let speeds  = ['BPM','LOW','HI','TRK'];
 let syncs   = ['OFF','ON'];
-let modes   = ['POL','UNA','UNB','TRI','DUO','MON'];
-let isSpeed = [35,41];
-let isSync  = [36,42];
+let modes   = ['Poly','Uni6','Uni4','Tri','Duo','Mono'];
+let isSpeed = [22,28];
+let isSync  = [23,29];
 let isMod   = [51,52,53,54,55,56,57,58,59,60,61,62,63,65,66,67,69,75,76,77,78];
 var modType = 0;
 
@@ -148,7 +148,6 @@ function modFold(type){
     }
 }
 
-
 function load(){
     document.getElementById("inputfile").click();
 }
@@ -184,14 +183,13 @@ function load(){
                     if(type==64){ continue; }
                     if(type==68){ continue; }
 
+                    var val = patchInput['data'][mod][type];
+                    var out = val;
+                    
+                    if(type == 17){ out = modes[val]; }
                     if((mod >0)&&(type <51)){ continue; }
                     if((mod==0)&&(type >76)){ continue; }
 
-                    var val = patchInput['data'][mod][type];
-                    var out = val;
-
-                    if(type == 17){ out = modes[val]; }
-                
                     if(isSpeed.indexOf(type) !== -1){ out = speeds[val]; }
                     if(isSync.indexOf(type)  !== -1){ out = syncs[val]; }
                 
@@ -285,14 +283,23 @@ function initDevices(midi) {
 }
 
 function displayDevices() {
+    // Display inputs
     selectIn.innerHTML  = midiIn.map( device => {
-        nymphes_available = (device.name == 'Nymphes' ? ' selected="selected"' : '')
-        return `<option${nymphes_available}>${device.name}</option>`
+        nymphes_available = (device.name == 'Nymphes' ? 'selected="selected"' : '')
+        return `<option ${nymphes_available}>${device.name} v${device.version}</option>`
     }).join('');
+    
+    // Display outputs
     selectOut.innerHTML = midiOut.map(device => {
-        nymphes_available = (device.name == 'Nymphes' ? ' selected="selected"' : '')
-        return `<option${nymphes_available}>${device.name}</option>`
+        nymphes_available = (device.name == 'Nymphes' ? 'selected="selected"' : '')
+        return `<option ${nymphes_available}>${device.name} v${device.version}</option>`
     }).join('');
+    
+    // Display output channels
+    channelOut.innerHTML = [...Array(16).keys()].map(channel => {
+        return `<option>Channel ${channel}</option>`
+    });
+
 }
   
 function startListening() {     
@@ -341,13 +348,17 @@ function sendSlider(valA,valB,valC){
 }
 
 function noteOn(note) { // later on, add [note, velocity, duration=0] to attributes
+    // console.log(`starting note ${note}`)
+    var outputMidiChannel = channelOut.selectedIndex - 1;
     const device = midiOut[selectOut.selectedIndex];
-    device.send([0x90, note, 0x7f]); // send full velocity note-ON A4 on channel 0. note A4 = 69
+    device.send([0x90 + outputMidiChannel, note, 0x7f]); // send full velocity note-ON (0x90) on channel (0x01)
 }
 
 function noteOff(note) { // later on, add [note, velocity, duration=0] to attributes
+    // console.log(`stopping note ${note}`)
+    var outputMidiChannel = channelOut.selectedIndex - 1;
     const device = midiOut[selectOut.selectedIndex];
-    device.send([0x80, note, 0]); // send full velocity note-OFF A4 on channel 0
+    device.send([0x90 + outputMidiChannel, note, 0]); // send full velocity note-OFF on channel 0
 }
 
 Array.from(document.getElementsByClassName('keyboard-key')).forEach(key => {
