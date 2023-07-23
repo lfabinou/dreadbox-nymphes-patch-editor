@@ -113,7 +113,7 @@ let isMod   = [51,52,53,54,55,56,57,58,59,60,61,62,63,65,66,67,69,75,76,77,78];
 var modType = 0;
 
 function sliderChange(type,val,mode=-1) {
-
+    var outputMidiChannel = channelOut.selectedIndex - 1;
     var out = val;
     if(type == 17){ out = modes[val]; } // Poly/Unison/Mono modes (CC17)
 
@@ -123,18 +123,18 @@ function sliderChange(type,val,mode=-1) {
     if((outIds[type] == '')|| (outIds[type] == undefined)){ return; }
 
     if(mode > -1){ 
-        sendSlider(176, 50, mode); 
+        sendSlider(0xB0 + outputMidiChannel, 50, mode); 
         modType = mode;
         document.querySelector('#'+outIds[type]+'o'+modType).innerHTML = out;
         patch['data'][mode][type] = parseInt(val,10);
-    }else{
+    } else {
         document.querySelector('#'+outIds[type]+'o').innerHTML = out;
         patch['data'][0][type] = parseInt(val,10);
     }
     if (test_mode) {
         console.log(`Sending slider #CC${type} with value=${val}`)
     }
-    sendSlider(176, type, val);
+    sendSlider(0xB0 + outputMidiChannel, type, val);
 }    
 
 function modFold(type){
@@ -175,7 +175,7 @@ function load(){
 
             for (let mod = 3; mod >= 0; mod--) {
 
-                if(mod > -1){ sendSlider(176, 50, mod); }
+                if(mod > -1){ sendSlider(0xB0 + outputMidiChannel, 50, mod); }
 
                 for (const patchType in patchInput['data'][mod]) {
                     type = parseInt(patchType,10);
@@ -204,7 +204,7 @@ function load(){
                     }
 
                     patch['data'][mod][type] = parseInt(val,10);   
-                    sendSlider(176, type, val);
+                    sendSlider(0xB0 + outputMidiChannel, type, val);
                 }
             }
         }              
