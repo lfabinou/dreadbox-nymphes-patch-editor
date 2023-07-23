@@ -115,7 +115,7 @@ var modType = 0;
 function sliderChange(type,val,mode=-1) {
 
     var out = val;
-    if(type == 30){ out = modes[val]; }
+    if(type == 17){ out = modes[val]; } // Poly/Unison/Mono modes (CC17)
 
     if(isSpeed.indexOf(type) !== -1){ out = speeds[val]; }
     if(isSync.indexOf(type)  !== -1){ out = syncs[val]; }
@@ -190,7 +190,7 @@ function load(){
                     var val = patchInput['data'][mod][type];
                     var out = val;
 
-                    if(type == 30){ out = modes[val]; }
+                    if(type == 17){ out = modes[val]; }
                 
                     if(isSpeed.indexOf(type) !== -1){ out = speeds[val]; }
                     if(isSync.indexOf(type)  !== -1){ out = syncs[val]; }
@@ -315,12 +315,19 @@ function midiMessageReceived(event) {
         if((outIds[cc_code]!='')&&(outIds[cc_code]!= undefined)){            
             var outId = outIds[cc_code];
 
-            if(isMod.indexOf(cc_code) !== -1) { // this is a modulation matrix change
+
+            if (isMod.indexOf(cc_code) !== -1) { // this is a modulation matrix change
                 document.querySelector('#'+outId+'o'+modType).innerHTML = cc_value;
                 document.querySelector('#'+outId+modType).value = cc_value; 
-            } else { // this is a normal change
+            } else { // this is not a modulation change
                 document.querySelector('#'+outId+'o').innerHTML = cc_value;
                 document.querySelector('#'+outId).value = cc_value;    
+                
+                if (cc_code==17) { // this is a mode change
+                    console.log('blah')
+                    document.querySelector('#pmode'+'o').innerHTML = modes[cc_value];
+                    document.querySelector('#pmode').value = cc_value;    
+                } 
             }
             patch['data'][modType][cc_code] = parseInt(cc_value,10);   
         }
