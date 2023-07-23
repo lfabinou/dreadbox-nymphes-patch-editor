@@ -2,6 +2,25 @@ var test_mode = window.location.href.includes('test=1')
 
 var range = document.querySelector('#fcut'),
     value = document.querySelector('.range-value');
+
+var keys_notes = {
+    "a": 60,
+    "w": 61,
+    "s": 62,
+    "e": 63,
+    "d": 64,
+    "f": 65,
+    "t": 66,
+    "g": 67,
+    "y": 68,
+    "h": 69,
+    "u": 70,
+    "j": 71,
+    "k": 72,
+    "o": 73,
+    "l": 74,
+    "p": 75
+}
     
 let outIds = [
     /*  0 */    '',
@@ -363,55 +382,33 @@ function noteOff(note) { // later on, add [note, velocity, duration=0] to attrib
 
 Array.from(document.getElementsByClassName('keyboard-key')).forEach(key => {
     key.addEventListener('mousedown', function() {
+        this.setAttribute('style', 'background-color: purple;')
         noteOn(this.getAttribute('data_note_number'));
     })  
     key.addEventListener('mouseup', function() {
+        this.removeAttribute('style')
         noteOff(this.getAttribute('data_note_number'));
     })
 });
 
 document.addEventListener('keypress', event => {
-    keys_notes = {
-        "a": 60,
-        "w": 61,
-        "s": 62,
-        "e": 63,
-        "d": 64,
-        "f": 65,
-        "t": 66,
-        "g": 67,
-        "y": 68,
-        "h": 69,
-        "u": 70,
-        "j": 71
-    }
     keys_to_capture = Object.keys(keys_notes);
     pressed_key = event.key;
     if (keys_to_capture.includes(pressed_key)) {
         // console.log(event.key + " is a target key");
-        noteOn(keys_notes[pressed_key]);
+        note_to_play = keys_notes[pressed_key]
+        document.querySelector(`td[data_note_number="${note_to_play}"]`).setAttribute('style', 'background-color: purple');
+        noteOn(note_to_play);
     }
 });
 
 document.addEventListener('keyup', event => {
-    keys_notes = {
-        "a": 60,
-        "w": 61,
-        "s": 62,
-        "e": 63,
-        "d": 64,
-        "f": 65,
-        "t": 66,
-        "g": 67,
-        "y": 68,
-        "h": 69,
-        "u": 70,
-        "j": 71
-    }
     keys_to_capture = Object.keys(keys_notes);
     pressed_key = event.key;
     if (keys_to_capture.includes(pressed_key)) {
         // console.log(event.key + " is a target key");
+        note_to_play = keys_notes[pressed_key]
+        document.querySelector(`td[data_note_number="${note_to_play}"]`).removeAttribute('style');
         noteOff(keys_notes[pressed_key]);
     }
 });

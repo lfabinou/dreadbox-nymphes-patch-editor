@@ -64,6 +64,27 @@ h3.small {
     display: flow-root;
 }
 
+.keyboard-key {
+    border: 1px solid black;
+    padding: 16px;
+    cursor: pointer;
+    width: 50px;
+}
+
+.white-key {
+    background-color: white;
+    color: black;
+}
+
+.black-key {
+    background-color: black;
+    color: white;
+    position: relative;
+    left: 25px;
+}
+
+
+
 .sliderbox{
     float:left;
     text-align: center;
