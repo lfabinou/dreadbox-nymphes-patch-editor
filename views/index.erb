@@ -91,8 +91,15 @@
       <div class="sliderbox rfs"><h3>WV </h3> <input id="lfoaw" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(32,this.value)" /><h3 class="bottom" id="lfoawo">0</h3></div>
       <div class="sliderbox rfs"><h3>DL </h3> <input id="lfoad" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(33,this.value)" /><h3 class="bottom" id="lfoado">0</h3></div>
       <div class="sliderbox rfs"><h3>FD </h3> <input id="lfoaf" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(34,this.value)" /><h3 class="bottom" id="lfoafo">0</h3></div>
-      <div class="sliderbox"><h3>SPD</h3> <input id="lfoas" type="range" orient="vertical" value="0" min="0" max="3"   oninput="sliderChange(35,this.value)" /><h3 class="bottom" id="lfoaso">BPM</h3></div>
-      <div class="sliderbox"><h3>SNC</h3> <input id="lfoac" type="range" orient="vertical" value="0" min="0" max="1"   oninput="sliderChange(36,this.value)" /><h3 class="bottom" id="lfoaco">OFF</h3></div>
+      <div class="sliderbox"><h3>SPD</h3> <input id="lfoas" type="range" orient="vertical" value="0" min="0" max="3"   oninput="sliderChange(35,this.value)" /><h3 class="bottom small" id="lfoaso">BPM</h3></div>
+      <div class="sliderbox"><h3>SNC</h3> <input id="lfoac" type="range" orient="vertical" value="0" min="0" max="1"   oninput="sliderChange(36,this.value)" /><h3 class="bottom small" id="lfoaco">OFF</h3></div>
+    </div>
+
+    <div class="section general">
+      <h2>GENERAL</h2>
+      <div class="sliderbox"><h3>MODE</h3> <input id="pmode" type="range" orient="vertical" value="0"   min="0" max="5"   oninput="sliderChange(17,this.value)" /><h3 class="bottom small" id="pmodeo">POL</h3></div>
+      <div class="sliderbox"><h3>LVL </h3> <input id="alvl"  type="range" orient="vertical" value="127" min="0" max="127" oninput="sliderChange( 7,this.value)" /><h3 class="bottom" id="alvlo">0</h3></div>
+      <div class="sliderbox"><h3>LEG </h3> <input id="legat" type="range" orient="vertical" value="0"   min="0" max="1"   oninput="sliderChange(68,this.value)" /><h3 class="bottom" id="legato">0</h3></div>
     </div>
 
     <div class="floatclear"></div>
@@ -145,8 +152,8 @@
       <div class="sliderbox rfs"><h3>WV </h3> <input id="lfobw" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(38,this.value)" /><h3 class="bottom" id="lfobwo">0</h3></div>
       <div class="sliderbox rfs"><h3>DL </h3> <input id="lfobd" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(39,this.value)" /><h3 class="bottom" id="lfobdo">0</h3></div>
       <div class="sliderbox rfs"><h3>FD </h3> <input id="lfobf" type="range" orient="vertical" value="0" min="0" max="127" oninput="sliderChange(40,this.value)" /><h3 class="bottom" id="lfobfo">0</h3></div>
-      <div class="sliderbox"><h3>SPD</h3> <input id="lfobs" type="range" orient="vertical" value="0" min="0" max="3"   oninput="sliderChange(41,this.value)" /><h3 class="bottom" id="lfobso">BPM</h3></div>
-      <div class="sliderbox"><h3>SNC</h3> <input id="lfobc" type="range" orient="vertical" value="0" min="0" max="1"   oninput="sliderChange(42,this.value)" /><h3 class="bottom" id="lfobco">OFF</h3></div>
+      <div class="sliderbox"><h3>SPD</h3> <input id="lfobs" type="range" orient="vertical" value="0" min="0" max="3"   oninput="sliderChange(41,this.value)" /><h3 class="bottom small" id="lfobso">BPM</h3></div>
+      <div class="sliderbox"><h3>SNC</h3> <input id="lfobc" type="range" orient="vertical" value="0" min="0" max="1"   oninput="sliderChange(42,this.value)" /><h3 class="bottom small" id="lfobco">OFF</h3></div>
     </div>
 
     <div class="floatclear"></div>
@@ -332,13 +339,6 @@
     <div class="floatclear"></div>
 
     <!-- ============================================ Miscellaneous ============================================ -->
-
-    <div class="section general">
-      <h2>GENERAL</h2>
-      <div class="sliderbox"><h3>MODE</h3> <input id="pmode" type="range" orient="vertical" value="0"   min="0" max="5"   oninput="sliderChange(30,this.value)" /><h3 class="bottom" id="pmodeo">POL</h3></div>
-      <div class="sliderbox"><h3>LVL </h3> <input id="alvl"  type="range" orient="vertical" value="127" min="0" max="127" oninput="sliderChange( 7,this.value)" /><h3 class="bottom" id="alvlo">0</h3></div>
-      <div class="sliderbox"><h3>LEG </h3> <input id="legat" type="range" orient="vertical" value="0"   min="0" max="1"   oninput="sliderChange(68,this.value)" /><h3 class="bottom" id="legato">0</h3></div>
-    </div>
 
     <div class="section reverb">
       <h2>REVERB</h2>
